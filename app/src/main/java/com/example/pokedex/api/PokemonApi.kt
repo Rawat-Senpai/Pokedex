@@ -1,8 +1,8 @@
 package com.example.pokedex.api
 
-import com.example.pokedex.models.FinalDataResponse
 
 import com.example.pokedex.models.PokemonList
+import com.example.pokedex.models.details.PokemonInfoModel
 import retrofit2.Response
 import retrofit2.http.GET
 import retrofit2.http.Path
@@ -19,7 +19,7 @@ interface PokemonApi {
 
     // get details of the pokemon
     @GET()
-    suspend fun getPokemonDetails(@Url url: String):Response<FinalDataResponse>
+    suspend fun getPokemonDetails(@Url url: String):Response<PokemonInfoModel>
 
 
 

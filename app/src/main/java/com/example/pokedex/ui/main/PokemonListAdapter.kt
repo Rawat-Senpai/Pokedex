@@ -24,7 +24,6 @@ class PokemonListAdapter():ListAdapter<MappedData, PokemonListAdapter.PokemonVie
 ) {
 
     private var onClickedAt=0L
-
     inner class PokemonViewHolder(private val binding: LayoutPokemonCardBinding) :
         RecyclerView.ViewHolder(binding.root){
             fun bind(pokemon: MappedData){
@@ -65,18 +64,7 @@ class PokemonListAdapter():ListAdapter<MappedData, PokemonListAdapter.PokemonVie
 
                     }).into(image)
 
-//                    Glide.with(root.context)
-//                        .load(pokemon.imageUrl)
-//                        .listener(
-//                            GlidePalette.with(pokemon.imageUrl)
-//                                .use(BitmapPalette.Profile.MUTED_LIGHT)
-//                                .intoCallBack { palette ->
-//                                    val rgb = palette?.dominantSwatch?.rgb
-//                                    if (rgb != null) {
-//                                        cardView.setCardBackgroundColor(rgb)
-//                                    }
-//                                }.crossfade(true),
-//                        ).into()
+
 
                     root.setOnClickListener(){
                         val currentClickedAt = SystemClock.elapsedRealtime()

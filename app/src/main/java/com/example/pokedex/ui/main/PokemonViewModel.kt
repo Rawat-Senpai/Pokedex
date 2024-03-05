@@ -8,8 +8,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import androidx.palette.graphics.Palette
-import com.example.pokedex.models.FinalDataResponse
+
 import com.example.pokedex.models.MappedData
 import com.example.pokedex.models.Results
 import com.example.pokedex.repository.PokemonRepository
@@ -83,12 +82,6 @@ class PokemonViewModel @Inject constructor(private val pokemonRepository: Pokemo
     }
 
     val pokemonNameLiveData: LiveData<NetworkResult<ArrayList<Results>>> get() = pokemonRepository.pokemonNameResponse
-    val pokemonDetailData: LiveData<NetworkResult<FinalDataResponse>> get() = pokemonRepository.pokemonDetailResponse
-
-
-
-
-
 
 
 
