@@ -2,10 +2,7 @@ package com.example.pokedex.ui.details
 
 import android.content.Context
 import android.content.Intent
-import android.graphics.Color
-import android.graphics.Typeface
 import android.graphics.drawable.Drawable
-
 import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
@@ -50,9 +47,7 @@ class DetailsActivity : TransformationAppCompatActivity() {
 
         Log.d("CheckingResponseDetails","Detail actiivty entered ")
         intent.getParcelableExtra<MappedData>(pokemonName)?.let {
-//            Glide.with(this)
-//                .load(it.imageUrl)
-//                .into(binding.image)
+
             Log.d("CheckingResponseDetails",it.name+" "+it.detailUrl+" "+it.imageUrl)
             binding.name.text = it.name
 
@@ -79,8 +74,6 @@ class DetailsActivity : TransformationAppCompatActivity() {
                         palette?.let {
                             val rgb=it.dominantSwatch?.rgb
                             if (rgb != null) {
-//                                binding.header.setCardBackgroundColor(rgb)
-//                                binding.header.setStrokeColorResource(rgb)
                                 binding.header.setBackgroundColor(rgb)
                             }
                         }
@@ -161,6 +154,8 @@ class DetailsActivity : TransformationAppCompatActivity() {
             progressDiff.progress = pokemonValue["defense"]?.toFloat()?:0f
             progressSpeed.progress = pokemonValue["speed"]?.toFloat()?:0f
 //            progressExp.progress = pokemonValue["experienc"]?.toFloat()?:0f
+            weight.text = pokemonData.weight.toString()+ " Kg"
+            height.text = pokemonData.height.toString()+" M"
 
         }
     }
