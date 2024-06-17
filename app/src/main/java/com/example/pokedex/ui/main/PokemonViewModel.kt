@@ -47,13 +47,13 @@ class PokemonViewModel @Inject constructor(private val pokemonRepository: Pokemo
         }
     }
 
+    //            "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/$number.png"
     private fun transformPokemonList(pokemonList: ArrayList<Results>): ArrayList<MappedData> {
         val mappedDataList = ArrayList<MappedData>()
         pokemonList.forEach { pokemon ->
             val number = extractPokemonNumber(pokemon.url)
             val url =   "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/" +
                     "pokemon/other/official-artwork/$number.png"
-//            "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/$number.png"
             mappedDataList.add(MappedData(pokemon.name.toString(), url, number.toString(),pokemon.url.toString()))
         }
         return mappedDataList
