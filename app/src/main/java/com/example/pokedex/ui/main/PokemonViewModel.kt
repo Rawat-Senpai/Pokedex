@@ -75,11 +75,7 @@ class PokemonViewModel @Inject constructor(private val pokemonRepository: Pokemo
         }
     }
 
-    fun getPokemonDetail(url: String) {
-        viewModelScope.launch {
-            pokemonRepository.getPokemonDetail(url)
-        }
-    }
+
 
     val pokemonNameLiveData: LiveData<NetworkResult<ArrayList<Results>>> get() = pokemonRepository.pokemonNameResponse
 
